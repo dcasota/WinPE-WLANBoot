@@ -12,6 +12,7 @@
 :: History:
 ::            10.04.2018 V1.0  DCa   Erstversion
 ::
+:: Useful weblinks
 :: ADK W10v1703: https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install
 :: Surface Drivers W10v1703 : https://www.microsoft.com/en-us/download/confirmation.aspx?id=49498&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 :: https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-add-drivers
@@ -77,7 +78,7 @@ copy /y "%WLANFile%" "%_MountDir%\W101709WinRe\Windows\System32\wlan-cfg.xml"
 set _WLANFile="%_MountDir%\W101709WinRe\Windows\System32\wlan.cmd
 (echo net start wlansvc)						>"%_WLANFile%"
 (echo netsh wlan add profile filename=x:\windows\system32\wlan-cfg.xml)	>>"%_WLANFile%"
-(echo netsh wlan connect name="FOClient Test" ssid=FOClient Test)	>>"%_WLANFile%"
+(echo netsh wlan connect name="WLAN Config" ssid=WLAN Config)	>>"%_WLANFile%"
 (echo ping localhost -n 30 ^>nul)					>>"%_WLANFile%"
 
 copy /y "%_MountDir%\W101709\Windows\System32\dmcmnutils.dll" "%_MountDir%\W101709WinRe\Windows\System32"
